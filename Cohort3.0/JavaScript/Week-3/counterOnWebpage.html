@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Counter on Webpage</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>Todo list</h1>
+    <h2></h2>
+    <h4>1. Take class</h4>
+    <h4>2. Go out to eat</h4>
+    <div>
+      <input id="counterInput" type="number" placeholder="From where to start counter:" />
+      <button onclick="startCounter()">Start Counter</button>
+    </div>
+    <script>
+      let counterValue;
+
+      function startCounter() {
+        const inputValue = document.getElementById("counterInput").value;
+        counterValue = parseInt(inputValue);
+        // if false means NaN then don't run otherwise inp = 5 -> false -> !false -> true -> if true then run.
+        if (!isNaN(counterValue)) { 
+          document.querySelector("h2").innerHTML = counterValue;
+          setInterval(printCounting, 1000);
+        }
+      }
+
+      function printCounting() {
+        counterValue += 1;
+        document.querySelector("h2").innerHTML = counterValue;
+      }
+    </script>
+  </body>
+</html>

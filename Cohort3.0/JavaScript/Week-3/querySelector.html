@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>QuerySelector | querySelectorAll </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>Todo list</h1>
+    <h4>1. Take class</h4>
+    <h4>2. Go out to eat</h4>
+    <h4>3. Take sleep.</h4>
+    <div>
+      <input type="text" />
+      <button onclick="printInConsole()">Add Todo</button>
+    </div>
+    <script>
+      //console.log(document);
+      function printInConsole() {
+        const allH4 = document.querySelectorAll("h4"); //return a nodeList like an array
+        console.log(allH4);
+        const inpElem = document.querySelector("input");
+        const inputText = inpElem.value;
+        console.log(inputText);
+      }
+    </script>
+  </body>
+</html>

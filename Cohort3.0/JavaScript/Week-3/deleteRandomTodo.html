@@ -1,0 +1,23 @@
+<html>
+  <body id="body">
+    <h2 id="todo-1">Todo 1</h2>
+    <h2 id="todo-2">Todo 2</h2>
+    <h2 id="todo-3">Todo 3</h2>
+    <button onclick="deleteRandomTodo()">Delete todo!</button>
+  </body>
+  <script>
+    function deleteRandomTodo() {
+      //to remove sequentially todos
+      //const parentElement = element.parentNode;
+      //parentElement.removeChild(element);
+
+      // to remove randoms todos
+      const todos = document.querySelectorAll("h2"); // Select all todos
+      if (todos.length > 0) {
+        const randomIndex = Math.floor(Math.random() * todos.length); // Generate a random index
+        const element = todos[randomIndex]; // Select the element at the random index
+        element.parentNode.removeChild(element); // Remove the selected element
+      }
+    }
+  </script>
+</html>
